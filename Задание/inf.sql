@@ -23,3 +23,7 @@ SELECT * FROM flights WHERE "Тип" = ?;
 INSERT INTO info("Номер самолёта", "Количество мест", "Количество купленных билетов", "Тип") VALUES(?,?, ?, ?);
 
 SELECT "Номер самолёта", "Тип" FROM flights;
+
+SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'flights' OR name = 'info';
+
+SELECT * FROM flights WHERE "№" = (SELECT MAX("№")  FROM flights)
